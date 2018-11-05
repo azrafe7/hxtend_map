@@ -21,7 +21,7 @@ neko: "2.2.0"
 matrix:
   # Allow Haxe development to fail.
   allow_failures:
-    - haxe: development
+#    - haxe: development
 
 addons:
   # This is the preferred way to install apt packages.
@@ -94,13 +94,13 @@ install:
 
 script:
   - haxe build-interp.hxml
-  - haxe build-neko.hxml         && neko bin/TestAll.n
-  - haxe build-js.hxml           && node bin/TestAll.js
-                                 && haxe phantomjs/run.hxml bin/TestAll.js
-  - haxe build-java.hxml         && java -jar bin/TestAll.jar
+  - haxe build-neko.hxml         && neko bin/Issue.n
+  - haxe build-js.hxml           && node bin/Issue.js
+                                 && haxe phantomjs/run.hxml bin/Issue.js
+  - haxe build-java.hxml         && java -jar bin/Issue.jar
   - haxe build-php.hxml          && php bin/index.php
-  - haxe build-cs.hxml           && mono bin/bin/TestAll.exe
-  - haxe build-cpp.hxml          && ./bin/TestAll
-  - haxe build-python.hxml       && python3 bin/TestAll.py
-  - haxe build-lua.hxml          && lua bin/TestAll.lua
-#  - haxe build-flash.hxml -D fdb && haxe flash/run.hxml bin/TestAll.swf
+  - haxe build-cs.hxml           && mono bin/bin/Issue.exe
+  - haxe build-cpp.hxml          && ./bin/Issue
+  - haxe build-python.hxml       && python3 bin/Issue.py
+  - haxe build-lua.hxml          && lua bin/Issue.lua
+#  - haxe build-flash.hxml -D fdb && haxe flash/run.hxml bin/Issue.swf
